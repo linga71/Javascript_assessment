@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>       
+        <body>
+      <script>
+           var A= ["pizza", "coke", "icecream","chips"];
+           var B= ["Soup","Juice","Water", "Others"];
+           var C= ["pant","shirts","trousers", "shoes","watches"];
+
+    var changeCat = function changeCat(firstList) {
+    var newSel = document.getElementById("category");
+    newSel.innerHTML="<option value=\"\">Select</option>"; // to reset the second list everytime
+    var opt;
+
+      //test according to the selected value
+      switch (firstList.options[firstList.selectedIndex].value) {
+          case "A":
+              for (var i=0; len=A.length, i<len; i++) {
+                    opt = document.createElement("option");
+                    opt.value = A[i];
+                    opt.text = A[i];
+                    newSel.appendChild(opt);
+              }
+              break;
+          case "B":
+              for (var i=0; len=B.length, i<len; i++) {
+                    opt = document.createElement("option");
+                    opt.value = B[i];
+                    opt.text = B[i];
+                    newSel.appendChild(opt);
+              }
+              break;
+          case "C":
+              for (var i=0; len=C.length, i<len; i++) {
+                    opt = document.createElement("option");
+                    opt.value = C[i];
+                    opt.text = C[i];
+                    newSel.appendChild(opt);
+              }
+              break;
+      }
+
+}
+      </script>
+
+
+      <select name="meal" id="meal" onchange="changeCat(this);">
+     <option value="">Select</option>
+     <option value="A">Food items</option>
+     <option value="B">Drinks</option>
+     <option value="C">Textiles</option>
+</select> <br/> <br/> <br/>
+
+
+<select name="category" id="category" size="5">
+     <option value="">Select</option>
+</select>
+        </body>
+    </head>
+</html>
